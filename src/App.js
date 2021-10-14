@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import CardPokemon from './components/CardPokemon';
-import { decremented, incrementByAmount, incremented } from './redux/counter';
+import { PING, PONG } from './redux/pokeFetch';
 import useFetch from './utilities/useFetch';
 
 function App() {
 
-	const { count } = useSelector(state => state.counter);
+	const { isPinging } = useSelector(state => state.pokeFetch);
 	const dispatch = useDispatch();
 
 	const { data, error, isPending } = useFetch('https://pokeapi.co/api/v2/pokemon/');
@@ -24,10 +24,10 @@ function App() {
 			<div key={index}>{data.name} {data.url}</div>
 		))}</div>
 		<br />
-		<h1>count is {count}</h1>
-		<button onClick={() => dispatch(incremented()) }>Increment</button>
-		<button onClick={() => dispatch(decremented()) }>decremented</button>
-		<button onClick={() => dispatch(incrementByAmount(10)) }>by amouont</button>
+		<h1>count is {isPinging}</h1>
+		<button onClick={() => dispatch(PING()) }>PING</button>
+		<button onClick={() => dispatch(PONG()) }>PONG</button>
+		{/* <button onClick={() => dispatch(incrementByAmount(10)) }>by amouont</button> */}
 	</div>
 	);
 }
