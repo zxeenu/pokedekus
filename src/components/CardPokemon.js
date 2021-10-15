@@ -1,6 +1,95 @@
 const CardPokemon = ({id, name, types, picture}) => {
+
+    let cardToUse = "";
+
+    switch(types[0]) {
+        case "normal":
+            cardToUse = "cardColorNormal";
+            break;
+
+        case "fighting":
+            cardToUse = "cardColorFight";
+            break;
+
+        case "flying":
+            cardToUse = "cardColorFlying";
+            break;
+
+        case "poison":
+            cardToUse = "cardColorPoison";
+            break;
+
+        case "ground":
+            cardToUse = "cardColorGround";
+            break;
+
+        case "rock":
+            cardToUse = "cardColorRock";
+            break;
+
+        case "bug":
+            cardToUse = "cardColorBug";
+            break;
+
+        case "ghost":
+            cardToUse = "cardColorGhost";
+            break;
+
+        case "steel":
+            cardToUse = "cardColorSteel";
+            break;
+
+        case "fire":
+            cardToUse = "cardColorFire";
+            break;
+
+        case "water":
+            cardToUse = "cardColorWater";
+            break;
+
+        case "grass":
+            cardToUse = "cardColorGrass";
+            break;
+
+        case "electric":
+            cardToUse = "cardColorElectric";
+            break;
+
+        case "psychic":
+            cardToUse = "cardColorPsycic";
+            break;
+
+        case "ice":
+            cardToUse = "cardColorIce";
+            break;
+
+        case "dragon":
+            cardToUse = "cardColorDragon";
+            break;
+
+        case "dark":
+            cardToUse = "cardColorDark";
+            break;
+
+        case "fairy":
+            cardToUse = "cardColorFairy";
+            break;
+
+        case "unknown":
+            cardToUse = "cardColorUnkown";
+            break;
+
+        case "shadow":
+            cardToUse = "cardColorShadow";
+            break;
+
+        default:
+            cardToUse = "cardColorUnkown";
+            break;
+      }
+
     return (
-        <div className="greenCard">
+        <div className={cardToUse}>
             <div className="container">
                 <div className="id">No:{id}</div>
                 <h2 >

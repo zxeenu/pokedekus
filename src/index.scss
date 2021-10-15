@@ -7,9 +7,34 @@ $yellowCardColor: rgb(255, 215, 112);
 $greenCardColor: rgb(73, 208, 176);
 $redCardColor: rgb(252, 108, 109);
 $blueCardColor: rgb(118, 190, 254);
+$greyCardColor: rgb(153, 143, 153);
+$purpleCardColor: rgb(125, 109, 148);
+
+$cardColorNormal: rgb(162, 161, 113);
+$cardColorBug: rgb(168, 184, 33);
+$cardColorFight: rgb(192, 48, 40);
+$cardColorGhost: rgb(113, 88, 153);
+$cardColorElectric: rgb(251, 206, 45);
+$cardColorFlying: rgb(168, 144, 240);
+$cardColorSteel: rgb(184, 184, 208);
+$cardColorPsycic: rgb(254, 88, 138);
+$cardColorPoison: rgb(157, 62, 162);
+$cardColorFire: rgb(240, 127, 47);
+$cardColorIce: rgb(152, 216, 216);
+$cardColorGround: rgb(223, 189, 99);
+$cardColorWater: rgb(108, 142, 239);
+$cardColorDragon: rgb(113, 51, 255);
+$cardColorRock: rgb(184, 159, 56);
+$cardColorGrass: rgb(119, 198, 79);
+$cardColorDark: rgb(111, 88, 72);
+$cardColorFairy: rgb(224, 142, 224);
+$cardColorUnknown: rgb(229, 242, 199);
+$cardColorShadow: rgb(85, 110, 126);
 
 // Mixins
 @mixin card($backgroundColor) {
+  min-height: min-content;
+  min-width: min-content;
   border-radius: 25px;
   padding: 20px 20px 20px 20px;
   margin: 20px;
@@ -31,6 +56,7 @@ $blueCardColor: rgb(118, 190, 254);
       padding-top: 5px;
       display: flex;
       font-weight: bold;
+      text-transform: capitalize;
 
       div {
         color: $cardFontColor;
@@ -43,6 +69,7 @@ $blueCardColor: rgb(118, 190, 254);
   }
 
   .typeItem {
+    text-transform: capitalize;
     color: $cardFontColor;
     border-radius: 10px;
     background-color: lighten($backgroundColor, 15);
@@ -97,7 +124,7 @@ $blueCardColor: rgb(118, 190, 254);
 
 // base styles
 * {
-  margin: 0;
+  // margin: 0;
   font-family: "Quicksand";
   color: #333;
 }
@@ -117,4 +144,66 @@ $blueCardColor: rgb(118, 190, 254);
 
 .blueCard {
   @include card($blueCardColor);
+}
+
+// element styles
+.cardColorNormal {
+  @include card($cardColorNormal);
+}
+.cardColorBug {
+  @include card($cardColorBug);
+}
+.cardColorFight {
+  @include card($cardColorFight);
+}
+.cardColorGhost {
+  @include card($cardColorGhost);
+}
+.cardColorElectric {
+  @include card($cardColorElectric);
+}
+.cardColorFlying {
+  @include card($cardColorFlying);
+}
+.cardColorSteel {
+  @include card($cardColorSteel);
+}
+.cardColorPsycic {
+  @include card($cardColorPsycic);
+}
+.cardColorPoison {
+  @include card($cardColorPoison);
+}
+.cardColorFire {
+  @include card($cardColorFire);
+}
+.cardColorIce {
+  @include card($cardColorIce);
+}
+.cardColorGround {
+  @include card($cardColorGround);
+}
+.cardColorWater {
+  @include card($cardColorWater);
+}
+.cardColorDragon {
+  @include card($cardColorDragon);
+}
+.cardColorRock {
+  @include card($cardColorRock);
+}
+.cardColorGrass {
+  @include card($cardColorGrass);
+}
+.cardColorDark {
+  @include card($cardColorDark);
+}
+.cardColorFairy {
+  @include card($cardColorFairy);
+}
+.cardColorUnkown {
+  @include card($cardColorUnknown);
+}
+.cardColorShadow {
+  @include card($cardColorShadow);
 }
