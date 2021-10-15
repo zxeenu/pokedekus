@@ -107,7 +107,7 @@ const CardPokemon = ({id, name, types, picture}) => {
                     <div className="pictureContainer grid">
                         <div className="background"></div>
                         <div className="picture">
-                            <img src={picture} width="270px"/>
+                            <img src={picture} width="270px" alt={name}/>
                         </div>
                     </div>
                 </div>

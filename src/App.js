@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import CardPokemon from './components/CardPokemon';
 import { BONG, loadPokemon, PING, PONG } from './redux/pokeFetch';
-// import useFetch from './utilities/useFetch';
 
 function App() {
 
