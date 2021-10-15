@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import counterReducer from './counter';
-import pokeFetch, { pingEpic } from './pokeFetch';
+import pokeFetch, { pokeFetchEpic } from './pokeFetch';
 
+// instantiate the middleware
 const epicMiddleware = createEpicMiddleware();
 
 // Redux store implemented with the Redux-Observable middleware.
@@ -16,7 +17,7 @@ const store = configureStore({
 
 // Combines all the login of the Redux-Observable epics into a single epic
 const rootEpic = combineEpics(
-    pingEpic,
+    pokeFetchEpic,
 );
 
 // Pass the consolidated epic into the middleware
