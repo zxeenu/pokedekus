@@ -32,14 +32,16 @@ function App() {
 		<button onClick={() => dispatch(PONG()) }>PONG</button>
 		<button onClick={() => dispatch(BONG(10)) }>BONG</button>
 		<button onClick={() => dispatch(loadPokemon()) }>Get Pokemon</button>
-		<div>
-			{pokemonData && pokemonData.map((pokemon, index) => {
+		<div className="container">
+			<div className="d-flex justify-content-center flex-wrap">
+				{pokemonData && pokemonData.map((pokemon, index) => {
 
-				const picId = pokemon.id.toString().padStart(3, "0");
-				const pictureUrl = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${picId}.png`;
+					const picId = pokemon.id.toString().padStart(3, "0");
+					const pictureUrl = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${picId}.png`;
 
-				return <CardPokemon key={index} id={pokemon.id} name={pokemon.name} types={pokemon.types.map((type) => type.type.name)} picture={pictureUrl} />
-			})}
+					return <CardPokemon className="" key={index} id={pokemon.id} name={pokemon.name} types={pokemon.types.map((type) => type.type.name)} picture={pictureUrl} />
+				})}
+			</div>
 		</div>
 	</div>
 	);
