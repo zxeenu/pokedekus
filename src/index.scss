@@ -3,7 +3,7 @@
 @import "sass-svg-uri/svg-uri";
 
 $cardFontColor: rgb(255, 255, 255);
-$detailFontColor: rgb(110, 113, 121);
+$detailFontColor: rgb(255, 255, 255);
 
 $yellowCardColor: rgb(255, 215, 112);
 $greenCardColor: rgb(73, 208, 176);
@@ -16,7 +16,7 @@ $cardColorNormal: rgb(162, 161, 113);
 $cardColorBug: rgb(168, 184, 33);
 $cardColorFight: rgb(192, 48, 40);
 $cardColorGhost: rgb(113, 88, 153);
-$cardColorElectric: rgb(251, 206, 45);
+$cardColorElectric: rgb(206, 184, 107);
 $cardColorFlying: rgb(168, 144, 240);
 $cardColorSteel: rgb(184, 184, 208);
 $cardColorPsycic: rgb(254, 88, 138);
@@ -215,26 +215,26 @@ $cardColorShadow: rgb(85, 110, 126);
   height: 85%;
   overflow-y: scroll;
   border-radius: 25px;
-  background-color: $backgroundColor;
+  background-color: lighten($backgroundColor, 15);
   cursor: pointer;
   padding: 40px;
   margin: 115px;
   opacity: 1;
-  color: $cardFontColor;
 
   .containerHeader {
     align-content: center;
 
     .id {
       padding-top: 10px;
-      color: $detailFontColor;
+      color: lighten($detailFontColor, 50);
       font-size: x-large;
       font-weight: bold;
       text-align: center;
     }
 
     .name {
-      color: $detailFontColor;
+      color: lighten($detailFontColor, 50);
+      font-weight: bold;
       font-size: 70px;
       text-transform: capitalize;
       text-align: center;
@@ -246,23 +246,29 @@ $cardColorShadow: rgb(85, 110, 126);
 
     .col {
       .typeNames {
-        background-color: darken($backgroundColor, 10);
+        background-color: darken($backgroundColor, 2);
         border-radius: 10px;
         padding: 25px;
 
+        .table-striped {
+          border-bottom: none;
+          color: lighten($detailFontColor, 50);
+        }
+
         .typeHeading {
           color: $detailFontColor;
+          font-weight: bold;
           font-size: x-large;
           text-align: center;
           padding: 10px;
         }
 
         .type {
-          color: $detailFontColor;
+          color: lighten($detailFontColor, 50);
           font-size: large;
           text-transform: capitalize;
           border-radius: 10px;
-          background-color: lighten($backgroundColor, 10);
+          background-color: darken($backgroundColor, 11);
           text-align: center;
           margin: 15px;
           height: 40px;
@@ -309,15 +315,6 @@ $cardColorShadow: rgb(85, 110, 126);
   }
 }
 
-// Table
-.table {
-  color: $detailFontColor;
-}
-
-.table-striped {
-  border-bottom: none;
-}
-
 // Global React-Modal animations
 .ReactModalPortal > * {
   // When the modal is closed, overlay div has no css class
@@ -340,6 +337,72 @@ $cardColorShadow: rgb(85, 110, 126);
   }
 }
 
+th,
+td {
+  color: $detailFontColor;
+}
+
+// modal element styles
+.modalColorNormal {
+  @include modal($cardColorNormal);
+}
+.modalColorBug {
+  @include modal($cardColorBug);
+}
+.modalColorFight {
+  @include modal($cardColorFight);
+}
+.modalColorGhost {
+  @include modal($cardColorGhost);
+}
+.modalColorElectric {
+  @include modal($cardColorElectric);
+}
+.modalColorFlying {
+  @include modal($cardColorFlying);
+}
+.modalColorSteel {
+  @include modal($cardColorSteel);
+}
+.modalColorPsycic {
+  @include modal($cardColorPsycic);
+}
+.modalColorPoison {
+  @include modal($cardColorPoison);
+}
+.modalColorFire {
+  @include modal($cardColorFire);
+}
+.modalColorIce {
+  @include modal($cardColorIce);
+}
+.modalColorGround {
+  @include modal($cardColorGround);
+}
+.modalColorWater {
+  @include modal($cardColorWater);
+}
+.modalColorDragon {
+  @include modal($cardColorDragon);
+}
+.modalColorRock {
+  @include modal($cardColorRock);
+}
+.modalColorGrass {
+  @include modal($cardColorGrass);
+}
+.modalColorDark {
+  @include modal($cardColorDark);
+}
+.modalColorFairy {
+  @include modal($cardColorFairy);
+}
+.modalColorUnkown {
+  @include modal($cardColorUnknown);
+}
+.modalColorShadow {
+  @include modal($cardColorShadow);
+}
 .modalContainer {
   @include modal($cardColorUnknown);
 }

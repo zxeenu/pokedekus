@@ -15,12 +15,101 @@ const DetailPokemonModal = () => {
         const picId = pokemonDetailData.id.toString().padStart(3, "0");
         const pictureUrl = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${picId}.png`;
 
+        let modalToUse = "";
+        const currentType = pokemonDetailData.types[0].type.name;
+
+        switch(currentType) {
+            case "normal":
+                modalToUse = "modalColorNormal";
+                break;
+
+            case "fighting":
+                modalToUse = "modalColorFight";
+                break;
+
+            case "flying":
+                modalToUse = "modalColorFlying";
+                break;
+
+            case "poison":
+                modalToUse = "modalColorPoison";
+                break;
+
+            case "ground":
+                modalToUse = "modalColorGround";
+                break;
+
+            case "rock":
+                modalToUse = "modalColorRock";
+                break;
+
+            case "bug":
+                modalToUse = "modalColorBug";
+                break;
+
+            case "ghost":
+                modalToUse = "modalColorGhost";
+                break;
+
+            case "steel":
+                modalToUse = "modalColorSteel";
+                break;
+
+            case "fire":
+                modalToUse = "modalColorFire";
+                break;
+
+            case "water":
+                modalToUse = "modalColorWater";
+                break;
+
+            case "grass":
+                modalToUse = "modalColorGrass";
+                break;
+
+            case "electric":
+                modalToUse = "modalColorElectric";
+                break;
+
+            case "psychic":
+                modalToUse = "modalColorPsycic";
+                break;
+
+            case "ice":
+                modalToUse = "modalColorIce";
+                break;
+
+            case "dragon":
+                modalToUse = "modalColorDragon";
+                break;
+
+            case "dark":
+                modalToUse = "modalColorDark";
+                break;
+
+            case "fairy":
+                modalToUse = "modalColorFairy";
+                break;
+
+            case "unknown":
+                modalToUse = "modalColorUnkown";
+                break;
+
+            case "shadow":
+                modalToUse = "modalColorShadow";
+                break;
+
+            default:
+                modalToUse = "modalColorUnkown";
+                break;
+          }
+
         return (
             <Modal Modal
                 isOpen={detailsModalIsOpen}
                 closeTimeoutMS={800}
                 onRequestClose={() => dispatch(CLOSE_MODAL())}
-                className="modalContainer"
+                className={modalToUse}
                 contentLabel="Pokemon Information">
                 <div className="containerHeader">
                     <h2 className="name">
