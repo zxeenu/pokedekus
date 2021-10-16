@@ -83,7 +83,7 @@ const DetailPokemonModal = () => {
                         <br/>
                         <div className="typeNames">
                             <div className="typeHeading">Stats: </div>
-                            <table class="table table-striped table-responsive-xl">
+                            <table className="table table-striped table-responsive-xl">
                                 <thead className="thead">
                                     <tr>
                                     <th scope="col">#</th>
