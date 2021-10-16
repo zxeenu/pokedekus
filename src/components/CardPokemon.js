@@ -1,10 +1,8 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { OPEN_MODAL } from '../redux/pokeFetch';
 
 const CardPokemon = ({id, name, types, picture}) => {
 
-    const { detailsModalIsOpen } = useSelector(state => state.pokeFetch);
     const dispatch = useDispatch();
 
     let cardToUse = "";
@@ -96,7 +94,7 @@ const CardPokemon = ({id, name, types, picture}) => {
       }
 
     return (
-        <div className={cardToUse} onClick={() => dispatch(OPEN_MODAL())}>
+        <div className={cardToUse} onClick={() => dispatch(OPEN_MODAL(id))}>
             <div className="container">
                 <div className="id">No:{id}</div>
                 <h2 >
@@ -114,7 +112,7 @@ const CardPokemon = ({id, name, types, picture}) => {
                     <div className="pictureContainer grid">
                         <div className="background"></div>
                         <div className="picture">
-                            <img src={picture} width="270px" alt={name}/>
+                            <img loading="lazy" src={picture} width="270px" alt={name}/>
                         </div>
                     </div>
                 </div>

@@ -131,19 +131,16 @@ $cardColorShadow: rgb(85, 110, 126);
   color: #333;
 }
 
-// card styles
+// // card styles
 .yellowCard {
   @include card($yellowCardColor);
 }
-
 .redCard {
   @include card($redCardColor);
 }
-
 .greenCard {
   @include card($greenCardColor);
 }
-
 .blueCard {
   @include card($blueCardColor);
 }
@@ -208,4 +205,73 @@ $cardColorShadow: rgb(85, 110, 126);
 }
 .cardColorShadow {
   @include card($cardColorShadow);
+}
+
+// Modal container styles
+@mixin modal($backgroundColor) {
+  // top: "50%";
+  // left: "50%";
+  // right: "auto";
+  // bottom: "auto";
+  // margin-right: "-50%";
+  // transform: "translate(-50%, -50%)";
+  // margin: 100px;
+  // border-color: red;
+  border-radius: 25px;
+  background-color: $backgroundColor;
+  cursor: pointer;
+  // border-radius: 25px;
+  padding: 20px;
+  margin: 150px;
+  // width: 550px;
+  // height: 75%;
+  // outline: "none";
+  // border-width: 20px;
+
+  // &:focus {
+  //   outline: "none";
+  // }
+
+  opacity: 1;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+// @mixin ReactModal__Overlay {
+//   opacity: 1;
+//   transition: opacity 2000ms ease-in;
+// }
+
+// @mixin ReactModal__Overlay--after-open {
+//   opacity: 0;
+// }
+
+// @mixin ReactModal__Overlay--before-close {
+//   opacity: 1;
+// }
+
+.ReactModalPortal > * {
+  // When the modal is closed, overlay div has no css class
+  // This selector should be overridden by the `&--after-open` class below
+  opacity: 0;
+}
+
+.ReactModal__Overlay {
+  transition: opacity 500ms ease-in-out;
+  background: rgba(0, 0, 0, 0.15);
+
+  &--after-open {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.15);
+  }
+  &--before-close {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.15);
+  }
+}
+
+.modalContainer {
+  @include modal($cardColorUnknown);
 }

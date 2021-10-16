@@ -39,6 +39,7 @@ const pokeFetch = createSlice({
     pokemonData: [],
     pokemonDataTemp: [],
     detailsModalIsOpen: false,
+    pokemonDetailData: null
   },
   reducers: {
     PING: state => {
@@ -51,6 +52,18 @@ const pokeFetch = createSlice({
       state.isPinging = `${action.payload}`;
     },
     OPEN_MODAL: (state, action) => {
+      // The payload for this method is the id of a pokemon
+
+      const pokemonId = action.payload;
+
+      let pokemon = null;
+      for (let i = 0; i < state.pokemonData.length; i++) {
+        if (state.pokemonData[i].id === pokemonId) {
+          pokemon = state.pokemonData[i];
+        }
+      }
+
+      state.pokemonDetailData = pokemon;
       state.detailsModalIsOpen = true;
     },
     CLOSE_MODAL: (state, action) => {
@@ -66,7 +79,7 @@ const pokeFetch = createSlice({
       state.currentUrl = action.payload.nextUrl;
       state.pokemonDataTemp = [...action.payload.dataList];
 
-      if (state.pokemonDataTemp.length != 0) {
+      if (state.pokemonDataTemp.length !== 0) {
         state.pokemonData = [...state.pokemonData, ...state.pokemonDataTemp];
       } else {
         state.pokemonData = [...state.pokemonDataTemp];
