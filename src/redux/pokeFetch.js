@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { combineEpics, ofType } from 'redux-observable';
-import { delay, mapTo } from 'rxjs/operators';
+import { combineEpics } from 'redux-observable';
 
 // Thunk
 const loadPokemon = createAsyncThunk(
@@ -42,15 +41,6 @@ const pokeFetch = createSlice({
     pokemonDetailData: null
   },
   reducers: {
-    PING: state => {
-      state.isPinging = 'PONG';
-    },
-    PONG: state => {
-      state.isPinging = 'PING';
-    },
-    BONG: (state, action) => {
-      state.isPinging = `${action.payload}`;
-    },
     OPEN_MODAL: (state, action) => {
       // The payload for this method is the id of a pokemon
 
@@ -93,28 +83,27 @@ const pokeFetch = createSlice({
 });
 
 
-// A single Epic for the this duck
-const pingToPong = (action$ ) => action$.pipe(
-  ofType(PING),
-  delay(5000), // Asynchronously wait 1000ms then continue
-  mapTo({ type: PONG })
-);
+// Redux-Observable middleware setup. But could not get it working, progess on hold for now.
+// // debounceTime delays notifications emitted by the source Observable, but drops previous pending delayed emissions if a new notification arrives on the source Observable. 
+// const openModal = (action$) => action$.pipe(
+//   ofType(OPEN_MODAL),
+//   debounceTime(1000),
+//   mapTo({ type: OPEN_MODAL })
+// );
 
-const pongToPing = (action$) => action$.pipe(
-  ofType(PONG),
-  delay(5000), // Asynchronously wait 1000ms then continue
-  mapTo({ type: PING })
-);
+// // const closeModal = (action$) => action$.pipe(
+// //   ofType(CLOSE_MODAL),
+// //   debounceTime(1000),
+// //   mapTo({ type: CLOSE_MODAL })
+// // );
 
-
-// the epic (Redux Observable middleware.)
-// actions pass from the middleware, to the reducers.
+// // the epic (Redux Observable middleware.)
+// // actions pass from the middleware, to the reducers.
 const pokeFetchEpic = combineEpics(
-  pingToPong,
-  pongToPing,
+  // openModal,
 );
 
-export const { PING, PONG, BONG, OPEN_MODAL, CLOSE_MODAL } = pokeFetch.actions;
+export const { OPEN_MODAL, CLOSE_MODAL } = pokeFetch.actions;
 export { pokeFetchEpic };
 export { loadPokemon };
 export default pokeFetch.reducer;

@@ -212,13 +212,13 @@ $cardColorShadow: rgb(85, 110, 126);
 
 // Modal container styles
 @mixin modal($backgroundColor) {
-  height: 80%;
+  height: 85%;
   overflow-y: scroll;
   border-radius: 25px;
   background-color: $backgroundColor;
   cursor: pointer;
   padding: 40px;
-  margin: 150px;
+  margin: 115px;
   opacity: 1;
   color: $cardFontColor;
 
@@ -230,12 +230,14 @@ $cardColorShadow: rgb(85, 110, 126);
       color: $detailFontColor;
       font-size: x-large;
       font-weight: bold;
+      text-align: center;
     }
 
     .name {
       color: $detailFontColor;
       font-size: 70px;
       text-transform: capitalize;
+      text-align: center;
     }
   }
 
@@ -275,8 +277,8 @@ $cardColorShadow: rgb(85, 110, 126);
     // width: 800px;
     .picture {
       // width: 800px;
-      width: 100%;
-      height: 100%;
+      width: 85%;
+      height: 85%;
       object-fit: contain;
       // background-color: red;
 
@@ -342,11 +344,13 @@ $cardColorShadow: rgb(85, 110, 126);
   @include modal($cardColorUnknown);
 }
 
+// error text style
 .error {
   font-size: x-large;
   text-align: center;
 }
 
+// background color on entire page
 body {
   background-color: rgb(244, 244, 244);
   // background-color: rgb(136, 65, 64);

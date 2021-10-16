@@ -23,10 +23,10 @@ const DetailPokemonModal = () => {
                 className="modalContainer"
                 contentLabel="Pokemon Information">
                 <div className="containerHeader">
-                    <div className="id">No:{pokemonDetailData.id}</div>
                     <h2 className="name">
                         {pokemonDetailData.name}
                     </h2>
+                    <div className="id">No:{pokemonDetailData.id}</div>
                 </div>
                 <div className="row containerDetail">
                     <div className="col">
