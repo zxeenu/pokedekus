@@ -70,6 +70,12 @@ $cardColorShadow: rgb(85, 110, 126);
 
   .row {
     margin-top: 5px;
+    // background: blue;
+    height: 50%;
+
+    .col {
+      height: 50%;
+    }
   }
 
   .typeItem {
@@ -125,6 +131,7 @@ $cardColorShadow: rgb(85, 110, 126);
   font-family: "Quicksand";
   color: #333;
   text-transform: capitalize;
+  // background-color: red;
 }
 
 // // card styles
@@ -314,6 +321,7 @@ $cardColorShadow: rgb(85, 110, 126);
   // When the modal is closed, overlay div has no css class
   // This selector should be overridden by the `&--after-open` class below
   opacity: 0;
+  background-color: blue;
 }
 
 .ReactModal__Overlay {
@@ -337,6 +345,16 @@ $cardColorShadow: rgb(85, 110, 126);
 .error {
   font-size: x-large;
   text-align: center;
+}
+
+body {
+  background-color: rgb(244, 244, 244);
+  // background-color: rgb(136, 65, 64);
+}
+
+.containerBody {
+  // background-color: red;
+  // margin: 25px;
 }
 
 // button
