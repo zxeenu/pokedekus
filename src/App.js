@@ -29,6 +29,7 @@ function App() {
 			{/* This is the pokemon detail modal view. It is hidden by default, but displayes when you click a pokemon card */}
 			<DetailPokemonModal/>
 
+			{/* This is the logo of the thing, generated with https://textcraft.net/style/Textcraft/pokemon */}
 			<div className="d-flex justify-content-center flex-wrap">
 				<img loading="lazy" src={logo.default} width="50%" alt="PokeDekus"/>
 			</div>
