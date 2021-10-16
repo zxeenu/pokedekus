@@ -38,6 +38,7 @@ const pokeFetch = createSlice({
     status: '',
     pokemonData: [],
     pokemonDataTemp: [],
+    detailsModalIsOpen: false,
   },
   reducers: {
     PING: state => {
@@ -48,6 +49,12 @@ const pokeFetch = createSlice({
     },
     BONG: (state, action) => {
       state.isPinging = `${action.payload}`;
+    },
+    OPEN_MODAL: (state, action) => {
+      state.detailsModalIsOpen = true;
+    },
+    CLOSE_MODAL: (state, action) => {
+      state.detailsModalIsOpen = false;
     }
   },
   extraReducers: {
@@ -94,7 +101,7 @@ const pokeFetchEpic = combineEpics(
   pongToPing,
 );
 
-export const { PING, PONG, BONG } = pokeFetch.actions;
+export const { PING, PONG, BONG, OPEN_MODAL, CLOSE_MODAL } = pokeFetch.actions;
 export { pokeFetchEpic };
 export { loadPokemon };
 export default pokeFetch.reducer;
