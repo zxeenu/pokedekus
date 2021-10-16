@@ -75,7 +75,7 @@ const pokeFetch = createSlice({
       state.status = "loading";
     },
     [loadPokemon.fulfilled]: (state, action) => {
-      state.status = "sucess";
+      state.status = "success";
       state.currentUrl = action.payload.nextUrl;
       state.pokemonDataTemp = [...action.payload.dataList];
 
