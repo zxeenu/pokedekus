@@ -13,7 +13,7 @@ const DetailPokemonModal = () => {
     if (pokemonDetailData != null) {
 
         const picId = pokemonDetailData.id.toString().padStart(3, "0");
-        const pictureUrl = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${picId}.png`;
+        const pictureUrl = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${picId}.png`;
 
         return (
             <Modal Modal
@@ -22,28 +22,36 @@ const DetailPokemonModal = () => {
                 onRequestClose={() => dispatch(CLOSE_MODAL())}
                 className="modalContainer"
                 contentLabel="Pokemon Information">
-                <div className="container">
+                <div className="containerHeader">
                     <div className="id">No:{pokemonDetailData.id}</div>
-                    <h2 >
-                        <div>&nbsp;</div>
-                        <div>{pokemonDetailData.name}</div>
+                    <h2 className="name">
+                        {pokemonDetailData.name}
                     </h2>
                 </div>
-                <div className="row">
-                    <div className="col">
+                <div className="row containerDetail">
+                    <div className="col typeNames">
+                        <div className="typeHeading">Type: </div>
                         {pokemonDetailData.types.map((type) => (
-                            <div key={type.type.name}>{type.type.name}</div>
+                            <div className="type" key={type.type.name}>{type.type.name}</div>
                         ))}
                     </div>
                     <div className="col">
-                        <div className="pictureContainer grid">
+                        <div className="pictureContainer">
                             <div className="background"></div>
                             <div className="picture">
-                                <img loading="lazy" src={pictureUrl} width="270px" alt={pokemonDetailData.name}/>
+                                <img loading="lazy" src={pictureUrl} width="100%" alt={pokemonDetailData.name}/>
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* <div className="row containerDetail">
+                    <div className="col-6 typeNames">
+                        <div className="typeHeading">Type: </div>
+                        {pokemonDetailData.types.map((type) => (
+                            <div className="type" key={type.type.name}>{type.type.name}</div>
+                        ))}
+                    </div>
+                </div> */}
             </Modal>
         );
     } else {
