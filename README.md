@@ -29,3 +29,5 @@ Icons come from [icon-icons](https://icon-icons.com/icon/pokemon-go-play-game-ci
 The logo comes from [textcraft.net](https://textcraft.net/style/Textcraft/pokemon).
 
 The high quality images of the Pokemon comes from 2 endpoints on unknown origin [Highquality Images](https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png) and [Normal Res Images](https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png). Souce [Rihor's pokemon image list](https://github.com/rihor/pokemon-image-list).
+
+The animations were acquired from Lottiefiles [Loading Animation](https://lottiefiles.com/9619-loading-dots-in-yellow) and [Back Button](https://lottiefiles.com/78700-back-arrow).
