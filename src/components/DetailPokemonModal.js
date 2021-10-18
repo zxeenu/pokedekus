@@ -1,6 +1,18 @@
+import React from 'react';
+import Lottie from 'react-lottie';
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
+import * as animation from '../assets/back.json';
 import { CLOSE_MODAL } from '../redux/pokeFetch';
+
+const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animation.default,
+    renderingSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+    }
+}
 
 
 const DetailPokemonModal = () => {
@@ -111,6 +123,11 @@ const DetailPokemonModal = () => {
                 onRequestClose={() => dispatch(CLOSE_MODAL())}
                 className={modalToUse}
                 contentLabel="Pokemon Information">
+                <div className="row">
+                    <div onClick={() => dispatch(CLOSE_MODAL())} className="col-1">
+                            <Lottie options={defaultOptions} width="80px"></Lottie>
+                    </div>
+                </div>
                 <div className="containerHeader">
                     <h2 className="name">
                         {pokemonDetailData.name}
@@ -172,7 +189,7 @@ const DetailPokemonModal = () => {
                         <br/>
                         <div className="typeNames">
                             <div className="typeHeading">Stats: </div>
-                            <table className="table table-striped table-responsive-xl">
+                            <table className="table table-striped table-responsive-md">
                                 <thead className="thead">
                                     <tr>
                                     <th scope="col">#</th>

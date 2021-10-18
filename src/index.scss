@@ -212,13 +212,17 @@ $cardColorShadow: rgb(85, 110, 126);
 
 // Modal container styles
 @mixin modal($backgroundColor) {
-  height: 85%;
+  // margin-top: 1%;
+  // margin-bottom: 3%;
+  height: 99%;
+  // width: 99%;
   overflow-y: scroll;
-  border-radius: 25px;
+  // border-radius: 25px;
   background-color: lighten($backgroundColor, 15);
   cursor: pointer;
   padding: 40px;
-  margin: 115px;
+  // margin: 115px;
+  // margin: 50px;
   opacity: 1;
 
   .containerHeader {
@@ -230,19 +234,20 @@ $cardColorShadow: rgb(85, 110, 126);
       font-size: x-large;
       font-weight: bold;
       text-align: center;
+      margin-bottom: 25px;
     }
 
     .name {
       color: lighten($detailFontColor, 50);
       font-weight: bold;
-      font-size: 70px;
+      font-size: 300%;
       text-transform: capitalize;
       text-align: center;
     }
   }
 
   .containerDetail {
-    margin: 35px;
+    // margin: 35px;
 
     .col {
       .typeNames {

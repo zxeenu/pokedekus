@@ -31,7 +31,7 @@ function App() {
 
 			{/* This is the logo of the thing, generated with https://textcraft.net/style/Textcraft/pokemon */}
 			<div className="d-flex justify-content-center flex-wrap">
-				<img loading="lazy" src={logo.default} width="50%" alt="PokeDekus"/>
+				<img loading="lazy" src={logo.default} width="60%" alt="PokeDekus"/>
 			</div>
 
 			{/* This is the card generator! */}
